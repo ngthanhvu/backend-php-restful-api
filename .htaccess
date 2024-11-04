@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Kích hoạt chế độ rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Định tuyến tất cả các yêu cầu đến index.php
+RewriteRule ^api/([a-zA-Z]+)/?([0-9]*)$ index.php?table=$1&id=$2 [QSA,L]
